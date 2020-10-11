@@ -10,3 +10,4 @@ Contents:
 
 ``scripts/obfuscate_chat.py`` - A crude script to replace names in the chat logs (sender name and any exact references in the messages)
 
+``scripts/popcorn2srt.py`` - A cruder script to convert chat logs into srt-format subtitles
