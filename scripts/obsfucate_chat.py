@@ -41,7 +41,7 @@ def process(filename):
         elem.attrib['name'] = renames[oldname]
         for name in renames:
             if name in elem.attrib['message']:
-                oldmesg = elem.attrib['message']
+                oldmsg = elem.attrib['message']
                 elem.attrib['message'] = oldmsg.replace(name, renames[name])
     with open(filename, 'wb') as f:
         data.write(f)
