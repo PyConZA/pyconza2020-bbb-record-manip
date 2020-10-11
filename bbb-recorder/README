@@ -1,0 +1,9 @@
+
+The docker image expects the output directory /data to be a mounted volume on the host
+running the image
+
+Usage:
+
+docker build -t pyconza-bbb-export .
+
+docker run -ti -v <host dir>:/data/ pyconza-bbb-export <url> [<bbb-record args>]
