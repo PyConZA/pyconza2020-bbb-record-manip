@@ -8,5 +8,5 @@ Contents:
 
 ``bbb-recorder/Dockerfile`` - A dockerfile for bundling everything needed to run bbb-recorder in one place.
 
-``scripts/obsfucate_chat.py`` - A crude script to replace names in the chat logs (sender name and any exact references in the messages)
+``scripts/obfuscate_chat.py`` - A crude script to replace names in the chat logs (sender name and any exact references in the messages)
 
