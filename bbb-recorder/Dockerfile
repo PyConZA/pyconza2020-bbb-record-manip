@@ -9,7 +9,13 @@ RUN curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-ke
 
 RUN echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
 
-RUN apt update && apt install -y google-chrome-stable git ffmpeg xvfb vim
+RUN apt update && apt install -y google-chrome-stable git ffmpeg xvfb vim 
+# ttf-unifont ttf-ancient-fonts 
+
+# Via https://packages.debian.org/buster/fonts-noto-color-emoji. A buster package, but useable on sid
+COPY fonts-noto-color-emoji.deb /
+
+RUN dpkg -i fonts-noto-color-emoji.deb
 
 RUN su -c 'cd /home/node && git clone https://github.com/jibon57/bbb-recorder' node
 
