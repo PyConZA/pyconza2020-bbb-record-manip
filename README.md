@@ -11,3 +11,7 @@ Contents:
 ``scripts/obfuscate_chat.py`` - A crude script to replace names in the chat logs (sender name and any exact references in the messages)
 
 ``scripts/popcorn2srt.py`` - A cruder script to convert chat logs into srt-format subtitles
+
+``scripts/make_cmds.py`` - Generate a list of docker run commands from a list of names & urls (used to create shell scripts to do the conversion)
+
+``scripts/make_html.py`` - Generate index.html file to make a list of mp4 downloadable (because we disable autoindex for BBB)
