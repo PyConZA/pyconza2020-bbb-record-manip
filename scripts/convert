@@ -1,0 +1,11 @@
+for x in *mp4; do
+   if echo $x | grep -q _keyframes.mp4; then
+      continue
+   fi
+   new="${x/.mp4/_keyframes.mp4}"
+   if [ -f "$new" ]; then
+      echo "Keyframed version $new exists - skipping"
+      continue
+   fi
+   ffmpeg -i "$x" -force_key_frames 'expr:gte(t,n_forced*5)' -max_muxing_queue_size 4096 "$new"
+done

@@ -4,6 +4,7 @@
 
 import os
 import sys
+import re
 import random
 from xml.etree.ElementTree import parse
 
@@ -43,6 +44,8 @@ def process(filename):
             if name in elem.attrib['message']:
                 oldmsg = elem.attrib['message']
                 elem.attrib['message'] = oldmsg.replace(name, renames[name])
+        # Replace @Name callouts with something else
+        elem.attrib['message'] = re.sub(r'@[A-Za-z]+\b', '@...', elem.attrib['message'])
     with open(filename, 'wb') as f:
         data.write(f)
 
